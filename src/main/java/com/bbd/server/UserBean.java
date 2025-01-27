@@ -6,8 +6,17 @@ import java.io.Serializable;
 public class UserBean implements Serializable
 {
 	private String uName, email, pWord;
+	private int uId;
 	
 	public UserBean() {}
+
+	public int getuId() {
+		return uId;
+	}
+
+	public void setuId(int uId) {
+		this.uId = uId;
+	}
 
 	public String getuName() {
 		return uName;

@@ -22,6 +22,7 @@ public class LoginDAO
 			if(rs.next())
 			{
 				ub = new UserBean();
+				ub.setuId(rs.getInt(1));
 				ub.setuName(rs.getString(2));
 				ub.setEmail(rs.getString(3));
 				ub.setpWord(rs.getString(4));

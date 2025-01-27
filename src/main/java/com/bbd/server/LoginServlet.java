@@ -31,9 +31,9 @@ public class LoginServlet extends HttpServlet
 			HttpSession hs = req.getSession();
 			hs.setAttribute("ub", ub);
 			
-			req.setAttribute("msg", "Logged in successfuly!");
+			req.setAttribute("msg", "Logged in successfully!");
 			req.setAttribute("uName", ub.getuName());
-			req.getRequestDispatcher("LoginSuccess.jsp").forward(req, res);
+			req.getRequestDispatcher("Home.jsp").forward(req, res);
 		}
 	}
 }
