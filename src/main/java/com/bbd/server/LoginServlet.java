@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet
 			
 			req.setAttribute("msg", "Logged in successfully!");
 			req.setAttribute("uName", ub.getuName());
-			req.getRequestDispatcher("Home.jsp").forward(req, res);
+			req.getRequestDispatcher("home").forward(req, res);
 		}
 	}
 }

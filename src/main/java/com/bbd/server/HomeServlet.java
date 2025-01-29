@@ -1,6 +1,7 @@
 package com.bbd.server;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,9 +10,15 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+
+/**
+ * Here we use HomeServlet for retrieving all the posts and sending to Home.jsp to display
+ * in the feed of users
+ * 
+ */
 @SuppressWarnings("serial")
-@WebServlet("/addPost")
-public class AddPostServlet extends HttpServlet
+@WebServlet("/home")
+public class HomeServlet extends HttpServlet
 {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
@@ -23,23 +30,13 @@ public class AddPostServlet extends HttpServlet
 			req.setAttribute("msg", "Session expired!");
 			req.getRequestDispatcher("Msg.jsp").forward(req, res);
 		}
-		else 
+		else
 		{
-			String content = req.getParameter("content");
-			int id = Integer.parseInt(req.getParameter("uid"));
+			ArrayList<PostBean> al = new ViewPostDAO().retrive();
 			
-			int k = new AddPostDAO().addPost(id, content);
+			hs.setAttribute("al", al);
 			
-			if(k == 0)
-			{
-				req.setAttribute("msg", "issues raised while posting!");
-				req.getRequestDispatcher("Msg.jsp").forward(req, res);
-			}
-			else
-			{
-				req.setAttribute("msg", "Successfully posted!");
-				req.getRequestDispatcher("PostSuccess.jsp").forward(req, res);
-			}
+			req.getRequestDispatcher("Home.jsp").forward(req, res);
 		}
 	}
 }
