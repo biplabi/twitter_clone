@@ -10,35 +10,35 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @SuppressWarnings("serial")
-@WebServlet("/addPost")
-public class AddPostServlet extends HttpServlet
+@WebServlet("/like")
+public class LikePostServlet extends HttpServlet
 {
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
 	{
 		HttpSession hs = req.getSession(false);
 		
 		if(hs == null)
 		{
 			req.setAttribute("msg", "Session expired!");
-			req.getRequestDispatcher("Msg.jsp").forward(req, res);
+			req.getRequestDispatcher("Msg.jsp").forward(req, res);			
 		}
-		else 
+		else
 		{
-			String content = req.getParameter("content");
+			int pId = Integer.parseInt(req.getParameter("pid"));
 			int uId = Integer.parseInt(req.getParameter("uid"));
 			
-			int k = new AddPostDAO().addPost(uId, content);
+			int k = new LikePostDAO().like(pId, uId);
 			
 			if(k == 0)
 			{
-				req.setAttribute("msg", "issues raised while posting!");
+				req.setAttribute("msg", "error in liking the post!");
 				req.getRequestDispatcher("Msg.jsp").forward(req, res);
 			}
 			else
 			{
-				req.setAttribute("msg", "Successfully posted!");
-				req.getRequestDispatcher("PostSuccess.jsp").forward(req, res);
+				req.setAttribute("msg", "Liked post successfully!");
+				req.getRequestDispatcher("home").forward(req, res);
 			}
 		}
 	}

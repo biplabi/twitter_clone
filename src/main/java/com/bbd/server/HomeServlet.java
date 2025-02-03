@@ -32,9 +32,10 @@ public class HomeServlet extends HttpServlet
 		}
 		else
 		{
-			ArrayList<PostBean> al = new ViewPostDAO().retrive();
+			ArrayList<PostBean> pl = new ViewPostDAO().retrive();
 			
-			hs.setAttribute("al", al);
+			
+			hs.setAttribute("pl", pl);
 			
 			req.getRequestDispatcher("Home.jsp").forward(req, res);
 		}

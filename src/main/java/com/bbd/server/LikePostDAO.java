@@ -3,24 +3,20 @@ package com.bbd.server;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class AddPostDAO 
+public class LikePostDAO 
 {
-	public int addPost(int uId, String content)
+	public int like(int pId, int uId)
 	{
 		int k = 0;
 		
 		try
 		{
 			Connection conn = DBConnection.getConnection();
-			
-			PreparedStatement ps = conn.prepareStatement("INSERT INTO POSTS(USER_ID, CONTENT) VALUES(?, ?)");
-			ps.setInt(1, uId);
-			ps.setString(2, content);
+			PreparedStatement ps = conn.prepareStatement("INSERT INTO LIKES(POST_ID, USER_ID) VALUES(?, ?)");
+			ps.setInt(1, pId);
+			ps.setInt(2, uId);
 			
 			k = ps.executeUpdate();
-			
-			ps.close();
-			conn.close();
 		}
 		catch(Exception e)
 		{

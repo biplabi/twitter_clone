@@ -31,15 +31,16 @@
 	<hr>
 	<h2>Welcome to your feed</h2>
 	<%
-		ArrayList<PostBean> al = (ArrayList<PostBean>)session.getAttribute("al");
+		ArrayList<PostBean> pl = (ArrayList<PostBean>)session.getAttribute("pl");
 	
-		Iterator<PostBean> it = al.iterator();
+		Iterator<PostBean> it = pl.iterator();
 		
 		while(it.hasNext())
 		{
 			PostBean pb = it.next();
 			
-			out.println(pb.getPostId() + "&nbsp&nbsp" + pb.getUserId() + "&nbsp&nbsp" + pb.getContent() + "&nbsp&nbsp" + pb.getCreatedAt() + "<br>");
+			out.println(pb.getPostId() + "&nbsp&nbsp" + pb.getUserId() + "&nbsp&nbsp" + pb.getContent() + "&nbsp&nbsp" + pb.getCreatedAt() + "<a href = 'like?pid="+ pb.getPostId() +"&uid="+ pb.getUserId() +"'>Like</a><br>");
+				
 		}
 	%>
 	
