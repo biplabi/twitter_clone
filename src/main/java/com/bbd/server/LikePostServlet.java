@@ -32,8 +32,8 @@ public class LikePostServlet extends HttpServlet
 			
 			if(k == 0)
 			{
-				req.setAttribute("msg", "error in liking the post!");
-				req.getRequestDispatcher("Msg.jsp").forward(req, res);
+				req.setAttribute("msg", "Already liked the post!");
+				req.getRequestDispatcher("home").forward(req, res);
 			}
 			else
 			{

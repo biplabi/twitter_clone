@@ -19,8 +19,6 @@ public class AddPostDAO
 			
 			k = ps.executeUpdate();
 			
-			ps.close();
-			conn.close();
 		}
 		catch(Exception e)
 		{

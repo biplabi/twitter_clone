@@ -27,6 +27,10 @@ public class ViewPostDAO
 				pb.setUserId(rs.getInt(2));
 				pb.setContent(rs.getString(3));
 				pb.setCreatedAt(rs.getTimestamp(4));
+				pb.setLikeCount(rs.getInt(5));
+				
+//				PreparedStatement ps1 = conn.prepareStatement("SELECT COUNT(*) FROM LIKES WHERE POST_ID = ?");
+//				ps1.setInt(1, rs.getInt(1));
 				
 				al.add(pb);
 			}

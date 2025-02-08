@@ -40,4 +40,17 @@ public class HomeServlet extends HttpServlet
 			req.getRequestDispatcher("Home.jsp").forward(req, res);
 		}
 	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse res)
+	{
+		try 
+		{
+			this.doPost(req, res);
+		} 
+		catch (ServletException | IOException e) 
+		{
+			e.printStackTrace();
+		}
+	}
 }

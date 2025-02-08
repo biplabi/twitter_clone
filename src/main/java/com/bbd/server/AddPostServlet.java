@@ -38,7 +38,7 @@ public class AddPostServlet extends HttpServlet
 			else
 			{
 				req.setAttribute("msg", "Successfully posted!");
-				req.getRequestDispatcher("PostSuccess.jsp").forward(req, res);
+				req.getRequestDispatcher("home").forward(req, res);
 			}
 		}
 	}

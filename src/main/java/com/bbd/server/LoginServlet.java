@@ -32,7 +32,6 @@ public class LoginServlet extends HttpServlet
 			hs.setAttribute("ub", ub);
 			
 			req.setAttribute("msg", "Logged in successfully!");
-			req.setAttribute("uName", ub.getuName());
 			req.getRequestDispatcher("home").forward(req, res);
 		}
 	}

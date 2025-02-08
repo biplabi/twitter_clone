@@ -11,16 +11,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		String msg = (String)request.getAttribute("msg");
-		out.println(msg + "<br>");
-		String uName = (String)request.getAttribute("uName");
-		out.println("Welcome " + uName + "!<br>");
-	%>
 	
 	<%
 		UserBean ub = (UserBean)session.getAttribute("ub");
 	%>
+
+	<%
+		String msg = (String)request.getAttribute("msg");
+		out.println(msg + "<br>");
+		String uName = (String) ub.getuName();
+		out.println("Welcome " + uName + "!<br>");
+	%>
+	
+	
 	<hr>
 	<h2>Add a new post</h2>
 	<form action = "addPost" method = "post">
@@ -39,7 +42,7 @@
 		{
 			PostBean pb = it.next();
 			
-			out.println(pb.getPostId() + "&nbsp&nbsp" + pb.getUserId() + "&nbsp&nbsp" + pb.getContent() + "&nbsp&nbsp" + pb.getCreatedAt() + "<a href = 'like?pid="+ pb.getPostId() +"&uid="+ pb.getUserId() +"'>Like</a><br>");
+			out.println(pb.getPostId() + "&nbsp&nbsp" + pb.getUserId() + "&nbsp&nbsp" + pb.getContent() + "&nbsp&nbsp" + pb.getCreatedAt() + "&nbsp&nbsp" + pb.getLikeCount() + "likes" + " <a href = 'like?pid="+ pb.getPostId() +"&uid="+ pb.getUserId() +"'>Like</a><br>");
 				
 		}
 	%>

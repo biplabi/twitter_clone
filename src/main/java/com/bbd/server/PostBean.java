@@ -9,7 +9,16 @@ public class PostBean implements Serializable
 	private int postId, userId;
 	private String content;
 	private Timestamp createdAt;
+	private int likeCount;
 	
+	public int getLikeCount() {
+		return likeCount;
+	}
+
+	public void setLikeCount(int likeCount) {
+		this.likeCount = likeCount;
+	}
+
 	public Timestamp getCreatedAt() {
 		return createdAt;
 	}
