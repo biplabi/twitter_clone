@@ -9,43 +9,64 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel = "stylesheet" href = "home.css">
 </head>
-<body>
+<body>	
+	<div id = "menu-section"></div>
 	
-	<%
+	<div id= "post-section">
+		<%
 		UserBean ub = (UserBean)session.getAttribute("ub");
-	%>
-
-	<%
-		String msg = (String)request.getAttribute("msg");
-		out.println(msg + "<br>");
-		String uName = (String) ub.getuName();
-		out.println("Welcome " + uName + "!<br>");
-	%>
+		%>
 	
-	
-	<hr>
-	<h2>Add a new post</h2>
-	<form action = "addPost" method = "post">
-		<textarea name = "content" placeholder = "Write something..." rows="4" cols="50" required></textarea><br>
-		<input type = "hidden" name = "uid" value = "<%= ub.getuId() %>">
-		<input type = "submit" value = "post">
-	</form>
-	<hr>
-	<h2>Welcome to your feed</h2>
-	<%
-		ArrayList<PostBean> pl = (ArrayList<PostBean>)session.getAttribute("pl");
-	
-		Iterator<PostBean> it = pl.iterator();
+		<%
+			String msg = (String)request.getAttribute("msg");
+			out.println(msg + "<br>");
+			String uName = (String) ub.getuName();
+			out.println("Welcome " + uName + "!<br>");
+		%>
 		
-		while(it.hasNext())
-		{
-			PostBean pb = it.next();
+		
+		<hr>
+		<h2>Add a new post</h2>
+		<form action = "addPost" method = "post">
+			<textarea name = "content" placeholder = "What is happening?!" rows="4" cols="50" required></textarea><br>
+			<input type = "hidden" name = "uid" value = "<%= ub.getuId() %>">
+			<input type = "submit" value = "post">
+		</form>
+		<hr>
+		<h2>Welcome to your feed</h2>
+		<%
+			ArrayList<PostBean> pl = (ArrayList<PostBean>)session.getAttribute("pl");
+		
+			Iterator<PostBean> it = pl.iterator();
 			
-			out.println(pb.getPostId() + "&nbsp&nbsp" + pb.getUserId() + "&nbsp&nbsp" + pb.getContent() + "&nbsp&nbsp" + pb.getCreatedAt() + "&nbsp&nbsp" + pb.getLikeCount() + "likes" + " <a href = 'like?pid="+ pb.getPostId() +"&uid="+ pb.getUserId() +"'>Like</a><br>");
+			while(it.hasNext())
+			{
+				PostBean pb = it.next();
 				
-		}
-	%>
+		%>
+			<div id = "post-container">
+				<div id = "post-heading">
+					<p><%= pb.getPostId() %></p>
+					<p><%= pb.getUserId() %></p>
+					<p><%= pb.getCreatedAt() %></p>
+				</div>
+				<div id = "post-content">
+					<p><%= pb.getContent() %></p>
+				</div>
+				<div id = "post-footer">
+					<div id = "like-box">
+						<div id= "likes"><%= pb.getLikeCount() %>likes</div>
+						<a id = "like-button" href = "like?pid=<%= pb.getPostId() %>&uid=<%= pb.getUserId() %>">Like</a>
+					</div>
+				</div>
+			</div>
+		<%			
+			}
+		%>
+	
+	</div>
 	
 </body>
 </html>

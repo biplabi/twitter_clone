@@ -1,0 +1,37 @@
+@charset "UTF-8";
+*
+{
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+}
+body
+{
+	background-color: #000000;
+    display: flex;
+}
+
+#menu-section
+{
+	width: 22vw;
+}
+#post-section #post-container
+{
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.5vw;
+	padding: 2vw;
+	border: 0.5px solid #a7a7a782;
+	border-bottom: none;
+}
+#post-section #post-container #post-heading
+{
+	display: flex;
+	column-gap: 1vw;
+}
+#post-section #post-container #post-footer #like-box
+{
+	display: flex;
+}
+
+

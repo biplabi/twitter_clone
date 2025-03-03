@@ -1,16 +1,145 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+        body 
+        { 
+        	background-color: #242D34; 
+        }
+        p
+        {
+        	margin: 0;
+        }
+        .reg-container 
+        { 
+        	max-width: 350px; 
+        	margin: 80px auto; 
+        	background: rgb(0,0,0); 
+        	padding: 30px 40px; 
+        	border-radius: 10px; 
+        	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        .reg-container #form-heading
+        {
+        	font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        	color: rgb(231, 233, 234);
+        	font-size: 31px;
+			line-height: 36px;
+			font-style: normal;
+			font-weight: 700;
+        }
+        
+        .reg-container #sign-up-with
+        {
+        	display: flex;
+		    flex-direction: column;
+		    height: 6vw;
+		    row-gap: 1vw;
+		    margin: 2vw 0 1vw 0;
+        }
+        
+        .reg-container #sign-up-with div
+        {
+        	background-color: #F9FBFF;
+		    display: flex;
+		    padding: 0.5vw;
+		    border-radius: 2vw;
+		    align-items: center;
+		    justify-content: center;
+		    column-gap: 0.5vw;
+		    height: 2.5vw;
+        }
+        
+        .reg-container #sign-up-with div img
+        {
+        	height: 1.5vw;
+        }
+        
+        .reg-container #sign-up-with div p
+        {
+        	font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+			font-style: normal;
+			font-weight: 700;
+			color: rgb(15, 20, 25);
+			font-size: 15px;
+			line-height: 20px;
+        }
+        
+        .reg-container #or-separator
+        {
+        	display: flex;
+        	align-items: center;
+        	justify-content: center;
+        }
+        .reg-container #or-separator div
+        {
+        	background-color: rgb(161 161 161 / 94%);
+		    height: 0.006vw;
+		    width: 12vw;
+        }
+        .reg-container #or-separator #or
+        {
+        	font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        	font-style: normal;
+			font-weight: 400;
+			color: rgb(231, 233, 234);
+			font-size: 17px;
+			line-height: 20px;
+			margin: 0 0.5vw;
+        }
+        
+        .reg-container form
+        {
+        	margin: 1vw 0;
+			display: flex;
+			flex-direction: column;
+        }
+        .reg-container .f-input
+        {
+        	background: transparent;
+		    border-style: none;
+		    border: 1px solid #ffffff38;
+		    border-radius: 0.4vw;
+		    padding: 1.4vw 0.5vw;
+        }
+        .reg-container #sign-up
+        {
+        	border-radius: 2vw;
+		    border-style: none;
+		    padding: 0.7vw 0;
+        }
+    </style>
+
 </head>
 <body>
-	<form action = "register" method = "post">
-		User name:<input type = "text" name = "uname"><br>
-		Email:<input type = "text" name = "email"><br>
-		Password:<input type = "text" name = "pword"><br>
-		<input type = "submit" value = "Register"><br>
-	</form>
-	<p>Already have an account?<a href = "login.html">Login here</a></p>
+	<div class = "reg-container">
+		<p id = "form-heading">Join B!B@ today</p>
+		
+		<div id = "sign-up-with">
+			<div>
+				<img src = "./images/google.png" alt = "google-image"/>
+				<p>Sign up with Google</p>
+			</div>
+			<div>
+				<img src = "./images/apple.png" alt = "apple-image"/>
+				<p>Sign up with Apple</p>
+			</div>
+		</div>
+				
+		<div id = "or-separator">
+			<div></div>
+			<p id = "or">or</p>
+			<div></div>
+		</div>
+		<form action = "register" method = "post">
+			<input class = "f-input" type = "text" name = "uname" placeholder = "Username"><br>
+			<input class = "f-input" type = "text" name = "email" placeholder = "Email"><br>
+			<input class = "f-input" type = "text" name = "pword" placeholder = "Password"><br>
+			<input id = "sign-up" type = "submit" value = "Register"><br>
+		</form>
+		<p style = "color: #152529; font-family: sans-serif">Already have an account?<a href = "login.html">Log in</a></p>
+	</div>
 </body>
 </html>
