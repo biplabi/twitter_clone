@@ -7,6 +7,7 @@ public class UserBean implements Serializable
 {
 	private String uName, email, pWord;
 	private int uId;
+	private byte[] profilePic;
 	
 	public UserBean() {}
 
@@ -40,6 +41,16 @@ public class UserBean implements Serializable
 
 	public void setpWord(String pWord) {
 		this.pWord = pWord;
+	}
+	
+	public byte[] getProfilePic()
+	{
+		return profilePic;
+	}
+	
+	public void setProfilePic(byte[] profilePic)
+	{
+		this.profilePic = profilePic;
 	}
 	
 	

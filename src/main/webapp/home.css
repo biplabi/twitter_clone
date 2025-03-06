@@ -15,6 +15,10 @@ body
 {
 	width: 22vw;
 }
+#post-section form textarea
+{
+	color: black;
+}
 #post-section #post-container
 {
 	display: flex;
@@ -32,6 +36,9 @@ body
 #post-section #post-container #post-footer #like-box
 {
 	display: flex;
+	column-gap: 0.5vw;
 }
+
+
 
 

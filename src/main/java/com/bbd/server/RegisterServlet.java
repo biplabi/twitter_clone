@@ -21,6 +21,7 @@ public class RegisterServlet extends HttpServlet
 		ub.setuName(req.getParameter("uname"));
 		ub.setEmail(req.getParameter("email"));
 		ub.setpWord(req.getParameter("pword"));
+//		ub.setProfilePic(req.get);
 		
 		RegisterDAO ob = new RegisterDAO();
 		

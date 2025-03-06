@@ -110,6 +110,17 @@
 		    border-style: none;
 		    padding: 0.7vw 0;
         }
+        .reg-container form #profile-photo
+        {
+        	padding: 1.4vw 0vw;
+    		display: flex;
+        	column-gap: 1vw;
+        }
+        .reg-container form #profile-photo p
+        {
+        	color: white;
+        	font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
     </style>
 
 </head>
@@ -137,6 +148,10 @@
 			<input class = "f-input" type = "text" name = "uname" placeholder = "Username"><br>
 			<input class = "f-input" type = "text" name = "email" placeholder = "Email"><br>
 			<input class = "f-input" type = "text" name = "pword" placeholder = "Password"><br>
+			<div id = "profile-photo">
+				<p>Profile photo</p>
+				<input type = "file" name = "profilepic" accept = "image/*" style = "width: 7vw;"><br>
+			</div>
 			<input id = "sign-up" type = "submit" value = "Register"><br>
 		</form>
 		<p style = "color: #152529; font-family: sans-serif">Already have an account?<a href = "login.html">Log in</a></p>

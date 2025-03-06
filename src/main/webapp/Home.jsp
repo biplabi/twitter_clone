@@ -57,8 +57,8 @@
 				</div>
 				<div id = "post-footer">
 					<div id = "like-box">
-						<div id= "likes"><%= pb.getLikeCount() %>likes</div>
-						<a id = "like-button" href = "like?pid=<%= pb.getPostId() %>&uid=<%= pb.getUserId() %>">Like</a>
+						<div id= "likes"><%= pb.getLikeCount() %> likes</div>
+						<a href = "like?pid=<%= pb.getPostId() %>&uid=<%= pb.getUserId() %>"><img src = "./images/like-btn.png" style = "width: 1.5vw" alt = "like-btn"/></a>
 					</div>
 				</div>
 			</div>
