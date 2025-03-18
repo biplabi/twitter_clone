@@ -14,11 +14,12 @@ public class RegisterDAO
 		
 		
 		try {
-			PreparedStatement ps = conn.prepareStatement("INSERT INTO USERS(USERNAME, EMAIL, PASSWORD) VALUES(?, ?, ?)");
+			PreparedStatement ps = conn.prepareStatement("INSERT INTO USERS(USERNAME, EMAIL, PASSWORD, PROFILE_PICTURE) VALUES(?, ?, ?, ?)");
 			
 			ps.setString(1, ub.getuName());
 			ps.setString(2, ub.getEmail());
 			ps.setString(3, ub.getpWord());
+			ps.setBytes(4, ub.getProfilePic());
 			
 			k = ps.executeUpdate();
 		} 

@@ -24,14 +24,20 @@ body
 	display: flex;
 	flex-direction: column;
 	row-gap: 0.5vw;
-	padding: 2vw;
+	padding: 1vw;
 	border: 0.5px solid #a7a7a782;
 	border-bottom: none;
+	width: 52vw;
 }
 #post-section #post-container #post-heading
 {
 	display: flex;
 	column-gap: 1vw;
+	align-items: center;
+}
+#post-section #post-container #post-heading img
+{
+	border-radius: 2vw;
 }
 #post-section #post-container #post-footer #like-box
 {

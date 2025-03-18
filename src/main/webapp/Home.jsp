@@ -45,11 +45,20 @@
 			{
 				PostBean pb = it.next();
 				
+				String base64Image = "";
+				
+				if(pb.getProfilePic() != null)
+				{
+					base64Image = Base64.getEncoder().encodeToString(pb.getProfilePic());
+				}
+				
 		%>
 			<div id = "post-container">
 				<div id = "post-heading">
-					<p><%= pb.getPostId() %></p>
-					<p><%= pb.getUserId() %></p>
+					<img src="data:image/jpeg;base64,<%= base64Image %>" alt="Profile Picture" width="40" height="40">
+					<!-- <p><%= pb.getPostId() %></p> -->
+					<!-- <p><%= pb.getUserId() %></p> -->
+					<p><%= pb.getuName() %></p>
 					<p><%= pb.getCreatedAt() %></p>
 				</div>
 				<div id = "post-content">

@@ -10,7 +10,25 @@ public class PostBean implements Serializable
 	private String content;
 	private Timestamp createdAt;
 	private int likeCount;
+	private byte[] profilePic;
+	private String uName;
 	
+	public String getuName() {
+		return uName;
+	}
+
+	public void setuName(String uName) {
+		this.uName = uName;
+	}
+
+	public byte[] getProfilePic() {
+		return profilePic;
+	}
+
+	public void setProfilePic(byte[] profilePic) {
+		this.profilePic = profilePic;
+	}
+
 	public int getLikeCount() {
 		return likeCount;
 	}

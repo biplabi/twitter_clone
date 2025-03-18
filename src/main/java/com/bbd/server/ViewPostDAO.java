@@ -15,9 +15,12 @@ public class ViewPostDAO
 		{
 			Connection conn = DBConnection.getConnection();
 			
-			PreparedStatement ps = conn.prepareStatement("SELECT * FROM POSTS");
+			PreparedStatement ps = conn.prepareStatement("SELECT * FROM POSTS");			
+			PreparedStatement ps1 = conn.prepareStatement("SELECT USERNAME, PROFILE_PICTURE FROM USERS WHERE USER_ID = ?");
 			
 			ResultSet rs = ps.executeQuery();
+			
+			
 			
 			while(rs.next())
 			{
@@ -28,6 +31,15 @@ public class ViewPostDAO
 				pb.setContent(rs.getString(3));
 				pb.setCreatedAt(rs.getTimestamp(4));
 				pb.setLikeCount(rs.getInt(5));
+				
+				ps1.setInt(1, rs.getInt(2));
+				ResultSet rs1 = ps1.executeQuery();
+				
+				if(rs1.next())
+				{
+					pb.setuName(rs1.getString(1));
+					pb.setProfilePic(rs1.getBytes(2));
+				}
 				
 //				PreparedStatement ps1 = conn.prepareStatement("SELECT COUNT(*) FROM LIKES WHERE POST_ID = ?");
 //				ps1.setInt(1, rs.getInt(1));

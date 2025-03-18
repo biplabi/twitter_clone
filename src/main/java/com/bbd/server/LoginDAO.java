@@ -26,6 +26,7 @@ public class LoginDAO
 				ub.setuName(rs.getString(2));
 				ub.setEmail(rs.getString(3));
 				ub.setpWord(rs.getString(4));
+				ub.setProfilePic(rs.getBytes(5));
 			}
 		} 
 		catch (SQLException e) 
