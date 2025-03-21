@@ -13,7 +13,29 @@ body
 
 #menu-section
 {
-	width: 22vw;
+	width: 20vw;
+	padding: 1vw 2vw;
+}
+#menu-section #menu
+{
+	padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vw;
+}
+
+#menu-section #menu .item a
+{
+	display: flex;
+    align-items: center;
+    column-gap: 0.5vw;
+    font-size: 1.5vw;
+    text-decoration: none;
+    font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+#menu-section #menu .item a img
+{
+	width: 2vw;
 }
 #post-section form textarea
 {

@@ -12,7 +12,58 @@
 <link rel = "stylesheet" href = "home.css">
 </head>
 <body>	
-	<div id = "menu-section"></div>
+	<div id = "menu-section">
+		<p id = "logo" style="
+				    display: flex;
+				    justify-content: center;
+				    font-size: 2vw;
+				    font-weight: bold;">B!B@</p>
+		<div id = "menu">
+			<div class = "item">
+				<a href = "Home.jsp">
+					<img src = "./images/home.png" alt = "home"/>
+					Home
+				</a>
+			</div>
+			<div class = "item">
+				<a href = "Home.jsp">
+					<img src = "./images/search.png" alt = "explore"/>
+					Explore
+				</a>
+			</div>
+			<div class = "item">
+				<a href = "Home.jsp">
+					<img src = "./images/notification.png" alt = "notification"/>
+					Notifications
+				</a>
+			</div>
+			<div class = "item">
+				<a href = "Home.jsp">
+					<img src = "./images/messages.png" alt = "message"/>
+					Messages
+				</a>
+			</div>
+			<div class = "item">
+				<a href = "Home.jsp">
+					<img src = "./images/grok.png" alt = "grok"/>
+					Grok
+				</a>
+			</div>
+			<div class = "item">
+				<a href = "Home.jsp">
+					<img src = "./images/profile.png" alt = "profile"/>
+					Profile
+				</a>
+			</div>
+			<div class = "item">
+				<a href = "Home.jsp">
+					<img src = "./images/more.png" alt = "more"/>
+					More
+				</a>
+			</div>
+		
+		</div>
+	</div>
 	
 	<div id= "post-section">
 		<%
